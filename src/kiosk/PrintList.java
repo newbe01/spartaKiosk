@@ -72,7 +72,7 @@ public class PrintList {
     public void printOrder() {
         System.out.println("========================================================\n\n");
         System.out.println("주문 완료");
-        System.out.println("대기번호는 [ " + order.getQuantity() + " ] 입니다.");
+        System.out.println("대기번호는 [ " + order.getOrderNumber() + " ] 입니다.");
         System.out.println("(3초후 메뉴판으로 돌아갑니다.)");
         System.out.println("\n\n========================================================");
         try {

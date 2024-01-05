@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Order {
     private List<Product> cart = new ArrayList<>();
-    private int quantity = 1;
+    private int orderNumber = 1;
 
     public void addCart(Product product) {
         cart.add(product);
@@ -23,7 +23,7 @@ public class Order {
         return cart.stream().mapToDouble(Product::getPrice).sum();
     }
 
-    public int getQuantity() {
-        return quantity++;
+    public int getOrderNumber() {
+        return orderNumber++;
     }
 }
