@@ -17,8 +17,8 @@ public class PrintList {
     }
 
 
-    public void printMain() {
-        List<Product> mainList = makeList.getMainList();
+    public void printMainMenuList(MenuType type) {
+        List<Product> mainList = makeList.getType(type);
         int cnt = 1;
 
         System.out.println("========================================================\n\n");
@@ -36,7 +36,7 @@ public class PrintList {
         System.out.println("\n\n========================================================");
     }
 
-    public List<Product> printDetail(MenuType type) {
+    public List<Product> printDetailMenuList(MenuType type) {
         List<Product> list = makeList.getType(type);
         int num = 1;
 
@@ -51,7 +51,7 @@ public class PrintList {
         return list;
     }
 
-    public void printCart() {
+    public void printCartList() {
         System.out.println("========================================================\n\n");
         int cnt = 1;
         System.out.println("[ ORDERS ]");
@@ -76,7 +76,7 @@ public class PrintList {
         System.out.println("(3초후 메뉴판으로 돌아갑니다.)");
         System.out.println("\n\n========================================================");
         try {
-            Thread.sleep(1000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

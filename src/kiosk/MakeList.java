@@ -117,6 +117,7 @@ public class MakeList {
             case FROZEN_CUSTARD -> getFrozenList();
             case DRINKS -> getDrinkList();
             case BEER -> getBeerList();
+            case MAIN -> getMainList();
         };
     }
 }

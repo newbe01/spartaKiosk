@@ -5,4 +5,5 @@ public enum MenuType {
     FROZEN_CUSTARD,
     DRINKS,
     BEER,
+    MAIN,
 }
