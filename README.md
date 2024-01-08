@@ -1,5 +1,2 @@
 ## Sparta Kiosk
 
-
-# spartaKiosk
-# spartaKiosk
