@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-    private List<Product> cart = new ArrayList<>();
+    private final List<Product> cart = new ArrayList<>();
     private int orderNumber = 1;
 
     public void addCart(Product product) {

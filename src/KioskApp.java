@@ -14,10 +14,6 @@ public class KioskApp {
     private static final PrintList print = new PrintList(order);
 
     public static void main(String[] args) {
-        start();
-    }
-
-    public static void start() {
         showMenuList();
     }
 
@@ -46,7 +42,15 @@ public class KioskApp {
             default -> showMenuList();
         }
 
-        int num = Integer.parseInt(sc.nextLine());
+
+        String input = sc.nextLine();
+        int num = 0;
+        try {
+            num = Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            detailMenuList(str);
+        }
+
         if (num > list.size()) {
             detailMenuList(str);
         }
@@ -58,7 +62,7 @@ public class KioskApp {
         print.printCartList();
         String str = sc.nextLine();
         if (str.equals("1")) {
-            showAddCart();
+            purchasing();
         } else if(str.equals("2")){
             showMenuList();
         } else {
@@ -67,7 +71,7 @@ public class KioskApp {
     }
 
     // 장바구니 담긴 상품 구매
-    private static void showAddCart() {
+    private static void purchasing() {
         print.printOrder();
         showMenuList();
     }
