@@ -42,7 +42,6 @@ public class KioskApp {
             default -> showMenuList();
         }
 
-
         String input = sc.nextLine();
         int num = 0;
         try {
