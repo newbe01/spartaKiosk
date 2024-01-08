@@ -4,7 +4,11 @@ import domain.MenuType;
 import domain.Product;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import static domain.MenuType.*;
 
 public class MakeList {
     public static List<Product> mainList = new ArrayList<>();
@@ -12,6 +16,7 @@ public class MakeList {
     public static List<Product> frozenList = new ArrayList<>();
     public static List<Product> drinkList = new ArrayList<>();
     public static List<Product> beerList = new ArrayList<>();
+    public static Map<MenuType, List<Product>> map = new HashMap<>();
 
     public void init() {
         mainList = makeMenu();
@@ -19,26 +24,12 @@ public class MakeList {
         frozenList = makeFrozenMenu();
         drinkList = makeDrinksMenu();
         beerList = makeBeerMenu();
-    }
 
-    public List<Product> getMainList() {
-        return mainList;
-    }
-
-    public List<Product> getBurgerList() {
-        return burgerList;
-    }
-
-    public List<Product> getFrozenList() {
-        return frozenList;
-    }
-
-    public List<Product> getDrinkList() {
-        return drinkList;
-    }
-
-    public List<Product> getBeerList() {
-        return beerList;
+        map.put(MAIN, mainList);
+        map.put(BURGERS, burgerList);
+        map.put(FROZEN_CUSTARD, frozenList);
+        map.put(DRINKS, drinkList);
+        map.put(BEER, beerList);
     }
 
     public List<Product> makeMenu() {
@@ -112,12 +103,6 @@ public class MakeList {
     }
 
     public List<Product> getType(MenuType type) {
-        return switch (type) {
-            case BURGERS -> getBurgerList();
-            case FROZEN_CUSTARD -> getFrozenList();
-            case DRINKS -> getDrinkList();
-            case BEER -> getBeerList();
-            case MAIN -> getMainList();
-        };
+        return map.get(type);
     }
 }
