@@ -81,6 +81,7 @@ public class PrintList {
             throw new RuntimeException(e);
         }
         order.sumTotalPrice(order.sumCartPrice());
+        makeList.addTotalProduct(order.getCart());
         order.clear();
     }
 
@@ -100,7 +101,14 @@ public class PrintList {
     }
 
     public void printTotal() {
+        List<Product> totalProduct = makeList.getTotalProduct();
         System.out.println("========================================================\n\n");
+        System.out.println("[ 총 판매금상품 목록 현황 ]");
+        System.out.println("현재까지 총 판매된 상품 목록은 아래와 같습니다.");
+        for (Product product : totalProduct) {
+            product.printTotal();
+        }
+        System.out.println("\n--------------------------------------------------------\n");
         System.out.println("[ 총 판매금액 현황 ]");
         System.out.printf("현재까지 총 판매된 금액은 [ ₩ %.1f ] 입니다 \n", order.getTotalPrice());
         System.out.println("1. 돌아가기");

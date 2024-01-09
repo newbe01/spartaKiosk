@@ -31,4 +31,8 @@ public class Product extends Menu {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    public void printTotal() {
+        System.out.printf("- %-15s | ₩ %.1f \n", getName(), getPrice());
+    }
 }

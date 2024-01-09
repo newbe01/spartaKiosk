@@ -108,14 +108,14 @@ public class KioskApp {
         }
     }
 
-    // 총 판매 금액
+    // 총 판매 금액, 리스트
     private static void showTotal() {
         print.printTotal();
 
         String str = sc.nextLine();
         if (str.equals("1")) {
             showMenuList();
-        }else {
+        } else {
             showTotal();
         }
     }

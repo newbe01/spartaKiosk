@@ -17,6 +17,11 @@ public class MakeList {
     public static List<Product> drinkList = new ArrayList<>();
     public static List<Product> beerList = new ArrayList<>();
     public static Map<MenuType, List<Product>> map = new HashMap<>();
+    public static List<Product> totalProduct = new ArrayList<>();
+
+    public List<Product> getTotalProduct() {
+        return totalProduct;
+    }
 
     public void init() {
         mainList = makeMenu();
@@ -104,5 +109,9 @@ public class MakeList {
 
     public List<Product> getType(MenuType type) {
         return map.get(type);
+    }
+
+    public void addTotalProduct(List<Product> cart) {
+        totalProduct.addAll(cart);
     }
 }
