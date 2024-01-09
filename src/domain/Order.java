@@ -6,6 +6,15 @@ import java.util.List;
 public class Order {
     private final List<Product> cart = new ArrayList<>();
     private int orderNumber = 1;
+    private double totalPrice = 0;
+
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void sumTotalPrice(double totalPrice) {
+        this.totalPrice += totalPrice;
+    }
 
     public void addCart(Product product) {
         cart.add(product);
@@ -19,7 +28,7 @@ public class Order {
         return cart;
     }
 
-    public double getTotal() {
+    public double sumCartPrice() {
         return cart.stream().mapToDouble(Product::getPrice).sum();
     }
 

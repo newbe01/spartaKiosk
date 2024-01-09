@@ -64,7 +64,7 @@ public class PrintList {
         }
 
         System.out.println("[ Total ]");
-        System.out.printf(" ₩  %.1f \n", order.getTotal());
+        System.out.printf(" ₩  %.1f \n", order.sumCartPrice());
         System.out.println("1. 주문\t\t\t2. 메뉴판");
         System.out.println("\n\n========================================================");
     }
@@ -80,6 +80,7 @@ public class PrintList {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+        order.sumTotalPrice(order.sumCartPrice());
         order.clear();
     }
 
@@ -95,6 +96,14 @@ public class PrintList {
         System.out.println("========================================================\n\n");
         System.out.println("진행하던 주문을 취소하시겠습니까?");
         System.out.println("1. 확인\t\t\t2. 취소");
+        System.out.println("\n\n========================================================");
+    }
+
+    public void printTotal() {
+        System.out.println("========================================================\n\n");
+        System.out.println("[ 총 판매금액 현황 ]");
+        System.out.printf("현재까지 총 판매된 금액은 [ ₩ %.1f ] 입니다 \n", order.getTotalPrice());
+        System.out.println("1. 돌아가기");
         System.out.println("\n\n========================================================");
     }
 }
